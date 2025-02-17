@@ -11,6 +11,7 @@ classifiers = [
 ]
 dependencies = [
   "nicegui>=2.11.1",
+  "pytest>=8.3.4",
   "tortoise-orm>=0.24.0",
 ]
 description = "Book list sample application on tortoise database"
@@ -20,6 +21,7 @@ requires-python = ">=3.12"
 version = "0.1.0"
 
 [project.urls]
+docs = "https://saitotsutomu.github.io/nicegui-book_list/"
 homepage = "https://github.com/SaitoTsutomu/nicegui-book_list"
 
 [project.scripts]
@@ -36,7 +38,7 @@ ignore_missing_imports = true
 src = ["src"]
 
 [tool.ruff.lint]
-ignore = ["ANN", "CPY", "D203", "D213", "D400", "D415", "DOC", "E501"]
+ignore = ["CPY", "D203", "D213", "D400", "D415", "DOC", "E501"]
 preview = true
 select = ["ALL"]
 

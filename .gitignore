@@ -6,6 +6,8 @@ nbs/
 .envrc
 .python-version
 Untitled*.ipynb
+db.sqlite3-shm
+db.sqlite3-wal
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

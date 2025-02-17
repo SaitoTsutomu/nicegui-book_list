@@ -5,7 +5,7 @@ from pathlib import Path
 from nicegui import app, ui
 from tortoise import Tortoise
 
-from .ui import AuthorList, BookList
+from nicegui_book_list.ui import AuthorList, BookList
 
 
 async def init_db() -> None:
@@ -24,8 +24,8 @@ async def close_db() -> None:
 @ui.page("/")
 async def index() -> None:
     """Top page"""
-    book_list = BookList()
-    await AuthorList(book_list).build()
+    book_list = BookList(label="書籍リスト")
+    await AuthorList(label="著者リスト", refs={book_list}).build()
     await book_list.build()
 
 
