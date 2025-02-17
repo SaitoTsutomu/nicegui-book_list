@@ -1,0 +1,1925 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Python - NiceGUI BookList</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="NiceGUI BookList" class="md-header__button md-logo" aria-label="NiceGUI BookList" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NiceGUI BookList
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NiceGUI BookList" class="md-nav__button md-logo" aria-label="NiceGUI BookList" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NiceGUI BookList
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About BookList
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      nicegui_book_list
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.Author" class="md-nav__link">
+    <span class="md-ellipsis">
+      Author
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList" class="md-nav__link">
+    <span class="md-ellipsis">
+      AuthorList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AuthorList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.Book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList" class="md-nav__link">
+    <span class="md-ellipsis">
+      BookList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BookList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase" class="md-nav__link">
+    <span class="md-ellipsis">
+      ListBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ListBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.keydown_enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      keydown_enter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      refresh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      nicegui_book_list
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.Author" class="md-nav__link">
+    <span class="md-ellipsis">
+      Author
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList" class="md-nav__link">
+    <span class="md-ellipsis">
+      AuthorList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AuthorList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.AuthorList.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.Book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList" class="md-nav__link">
+    <span class="md-ellipsis">
+      BookList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BookList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.BookList.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase" class="md-nav__link">
+    <span class="md-ellipsis">
+      ListBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ListBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.check" class="md-nav__link">
+    <span class="md-ellipsis">
+      check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.create" class="md-nav__link">
+    <span class="md-ellipsis">
+      create
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.keydown_enter" class="md-nav__link">
+    <span class="md-ellipsis">
+      keydown_enter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.nicegui_book_list.ListBase.refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      refresh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python">Python</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.nicegui_book_list"></a>
+    <div class="doc doc-contents first">
+
+        <p>Book List</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.nicegui_book_list.Author" class="doc doc-heading">
+            <code>Author</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="tortoise.models.Model">Model</span></code></p>
+
+
+        <p>著者モデル</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.Author.id">id</span></code></td>
+            <td>
+                  <code><span title="tortoise.fields.IntField">IntField</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>主キー</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.Author.name">name</span></code></td>
+            <td>
+                  <code><span title="tortoise.fields.CharField">CharField</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>著者名</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/nicegui_book_list/models.py</code></summary>
+                <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #B06; font-weight: bold">Author</span>(models<span style="color: #333">.</span>Model):
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;著者モデル</span>
+
+<span style="color: #D42">    :ivar id: 主キー</span>
+<span style="color: #D42">    :ivar name: 著者名</span>
+<span style="color: #D42">    &quot;&quot;&quot;</span>
+
+    <span style="color: #007020">id</span>: fields<span style="color: #333">.</span>IntField <span style="color: #333">=</span> fields<span style="color: #333">.</span>IntField(primary_key<span style="color: #333">=</span><span style="color: #080; font-weight: bold">True</span>)
+    name: fields<span style="color: #333">.</span>CharField <span style="color: #333">=</span> fields<span style="color: #333">.</span>CharField(max_length<span style="color: #333">=</span><span style="color: #00D; font-weight: bold">255</span>)
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.nicegui_book_list.AuthorList" class="doc doc-heading">
+            <code>AuthorList</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="src.nicegui_book_list.ui.ListBase" href="#src.nicegui_book_list.ListBase">ListBase</a></code></p>
+
+
+        <p>著者リストのGUI</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.AuthorList.name">name</span></code></td>
+            <td>
+                  <code><span title="nicegui.ui.input">input</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>モデルのフィールド用</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.AuthorList.model">model</span></code></td>
+            <td>
+                  <code><span title="tortoise.models.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>対象モデル</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+                <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">113</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">114</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">115</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">116</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">117</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">118</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">119</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">120</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">121</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">122</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">135</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #B06; font-weight: bold">AuthorList</span>(ListBase):
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;著者リストのGUI</span>
+
+<span style="color: #D42">    :ivar name: モデルのフィールド用</span>
+<span style="color: #D42">    :cvar model: 対象モデル</span>
+<span style="color: #D42">    &quot;&quot;&quot;</span>
+
+    name: ui<span style="color: #333">.</span>input
+    model: ClassVar[Model] <span style="color: #333">=</span> models<span style="color: #333">.</span>Author
+
+    <span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+        <span style="color: #007020">super</span>()<span style="color: #333">.</span>build()
+        authors: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Author] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>all()
+        <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+            <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui:
+                <span style="color: #007020">self</span><span style="color: #333">.</span>name <span style="color: #333">=</span> ui<span style="color: #333">.</span>input(label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Name&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;keydown.enter&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>keydown_enter)
+            <span style="color: #080; font-weight: bold">for</span> author <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">reversed</span>(authors):
+                <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>card(), ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;items-center&quot;</span>):
+                    ui<span style="color: #333">.</span>input(<span style="background-color: #FFF0F0">&quot;Name&quot;</span>, on_change<span style="color: #333">=</span>author<span style="color: #333">.</span>save)<span style="color: #333">.</span>bind_value(author, <span style="background-color: #FFF0F0">&quot;name&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;blur&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh)
+                    ui<span style="color: #333">.</span>button(icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;delete&quot;</span>, on_click<span style="color: #333">=</span><span style="color: #080; font-weight: bold">lambda</span> a<span style="color: #333">=</span>author: <span style="color: #007020">self</span><span style="color: #333">.</span>delete(a))<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)
+
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+        <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #007020">self</span><span style="color: #333">.</span>name<span style="color: #333">.</span>value:
+            ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Specify name&quot;</span>)
+            <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+        <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">True</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.AuthorList.build" class="doc doc-heading">
+            <code class=" language-python">build()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>GUI作成</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+<span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+    <span style="color: #007020">super</span>()<span style="color: #333">.</span>build()
+    authors: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Author] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>all()
+    <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+        <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui:
+            <span style="color: #007020">self</span><span style="color: #333">.</span>name <span style="color: #333">=</span> ui<span style="color: #333">.</span>input(label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Name&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;keydown.enter&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>keydown_enter)
+        <span style="color: #080; font-weight: bold">for</span> author <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">reversed</span>(authors):
+            <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>card(), ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;items-center&quot;</span>):
+                ui<span style="color: #333">.</span>input(<span style="background-color: #FFF0F0">&quot;Name&quot;</span>, on_change<span style="color: #333">=</span>author<span style="color: #333">.</span>save)<span style="color: #333">.</span>bind_value(author, <span style="background-color: #FFF0F0">&quot;name&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;blur&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh)
+                ui<span style="color: #333">.</span>button(icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;delete&quot;</span>, on_click<span style="color: #333">=</span><span style="color: #080; font-weight: bold">lambda</span> a<span style="color: #333">=</span>author: <span style="color: #007020">self</span><span style="color: #333">.</span>delete(a))<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.AuthorList.check" class="doc doc-heading">
+            <code class=" language-python">check()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>入力チェック</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+    <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #007020">self</span><span style="color: #333">.</span>name<span style="color: #333">.</span>value:
+        ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Specify name&quot;</span>)
+        <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+    <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.nicegui_book_list.Book" class="doc doc-heading">
+            <code>Book</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="tortoise.models.Model">Model</span></code></p>
+
+
+        <p>書籍モデル</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.Book.id">id</span></code></td>
+            <td>
+                  <code><span title="tortoise.fields.IntField">IntField</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>主キー</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.Book.author">author</span></code></td>
+            <td>
+                  <code><span title="tortoise.fields.ForeignKeyField">ForeignKeyField</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>著者</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.Book.title">title</span></code></td>
+            <td>
+                  <code><span title="tortoise.fields.CharField">CharField</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>書籍名</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/nicegui_book_list/models.py</code></summary>
+                <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #B06; font-weight: bold">Book</span>(models<span style="color: #333">.</span>Model):
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;書籍モデル</span>
+
+<span style="color: #D42">    :ivar id: 主キー</span>
+<span style="color: #D42">    :ivar author: 著者</span>
+<span style="color: #D42">    :ivar title: 書籍名</span>
+<span style="color: #D42">    &quot;&quot;&quot;</span>
+
+    <span style="color: #007020">id</span>: fields<span style="color: #333">.</span>IntField <span style="color: #333">=</span> fields<span style="color: #333">.</span>IntField(primary_key<span style="color: #333">=</span><span style="color: #080; font-weight: bold">True</span>)
+    author: fields<span style="color: #333">.</span>ForeignKeyField <span style="color: #333">=</span> fields<span style="color: #333">.</span>ForeignKeyField(<span style="background-color: #FFF0F0">&quot;models.Author&quot;</span>, related_name<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;books&quot;</span>)
+    title: fields<span style="color: #333">.</span>CharField <span style="color: #333">=</span> fields<span style="color: #333">.</span>CharField(max_length<span style="color: #333">=</span><span style="color: #00D; font-weight: bold">255</span>)
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.nicegui_book_list.BookList" class="doc doc-heading">
+            <code>BookList</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="src.nicegui_book_list.ui.ListBase" href="#src.nicegui_book_list.ListBase">ListBase</a></code></p>
+
+
+        <p>書籍リストのGUI</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.BookList.author_id">author_id</span></code></td>
+            <td>
+                  <code><span title="nicegui.ui.select">select</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>モデルのフィールド用</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.BookList.title">title</span></code></td>
+            <td>
+                  <code><span title="nicegui.ui.input">input</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>モデルのフィールド用</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.BookList.model">model</span></code></td>
+            <td>
+                  <code><span title="tortoise.models.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>対象モデル</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+                <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #B06; font-weight: bold">BookList</span>(ListBase):
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;書籍リストのGUI</span>
+
+<span style="color: #D42">    :ivar author_id: モデルのフィールド用</span>
+<span style="color: #D42">    :ivar title: モデルのフィールド用</span>
+<span style="color: #D42">    :cvar model: 対象モデル</span>
+<span style="color: #D42">    &quot;&quot;&quot;</span>
+
+    author_id: ui<span style="color: #333">.</span>select
+    title: ui<span style="color: #333">.</span>input
+    model: ClassVar[Model] <span style="color: #333">=</span> models<span style="color: #333">.</span>Book
+
+    <span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+        <span style="color: #007020">super</span>()<span style="color: #333">.</span>build()
+        authors: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Author] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>all()
+        books: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Book] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Book<span style="color: #333">.</span>all()
+        <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+            <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui:
+                <span style="color: #007020">self</span><span style="color: #333">.</span>author_id <span style="color: #333">=</span> ui<span style="color: #333">.</span>select({author<span style="color: #333">.</span>id: author<span style="color: #333">.</span>name <span style="color: #080; font-weight: bold">for</span> author <span style="color: #000; font-weight: bold">in</span> authors}, label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Author&quot;</span>)
+                <span style="color: #007020">self</span><span style="color: #333">.</span>title <span style="color: #333">=</span> ui<span style="color: #333">.</span>input(label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Title&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;keydown.enter&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>keydown_enter)
+            <span style="color: #080; font-weight: bold">for</span> book <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">reversed</span>(books):
+                author <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> book<span style="color: #333">.</span>author
+                <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>card(), ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;items-center&quot;</span>):
+                    ui<span style="color: #333">.</span>label(author<span style="color: #333">.</span>name)
+                    ui<span style="color: #333">.</span>input(<span style="background-color: #FFF0F0">&quot;Title&quot;</span>, on_change<span style="color: #333">=</span>book<span style="color: #333">.</span>save)<span style="color: #333">.</span>bind_value(book, <span style="background-color: #FFF0F0">&quot;title&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;blur&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh)
+                    ui<span style="color: #333">.</span>button(icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;delete&quot;</span>, on_click<span style="color: #333">=</span><span style="color: #080; font-weight: bold">lambda</span> a<span style="color: #333">=</span>book: <span style="color: #007020">self</span><span style="color: #333">.</span>delete(a))<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)
+
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+        <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #007020">self</span><span style="color: #333">.</span>title<span style="color: #333">.</span>value:
+            ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Specify title&quot;</span>)
+            <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+        <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>exists(<span style="color: #007020">id</span><span style="color: #333">=</span><span style="color: #007020">self</span><span style="color: #333">.</span>author_id<span style="color: #333">.</span>value):
+            ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Select author&quot;</span>)
+            <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+        <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">True</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.BookList.build" class="doc doc-heading">
+            <code class=" language-python">build()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>GUI作成</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+<span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+    <span style="color: #007020">super</span>()<span style="color: #333">.</span>build()
+    authors: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Author] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>all()
+    books: <span style="color: #007020">list</span>[models<span style="color: #333">.</span>Book] <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Book<span style="color: #333">.</span>all()
+    <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+        <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui:
+            <span style="color: #007020">self</span><span style="color: #333">.</span>author_id <span style="color: #333">=</span> ui<span style="color: #333">.</span>select({author<span style="color: #333">.</span>id: author<span style="color: #333">.</span>name <span style="color: #080; font-weight: bold">for</span> author <span style="color: #000; font-weight: bold">in</span> authors}, label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Author&quot;</span>)
+            <span style="color: #007020">self</span><span style="color: #333">.</span>title <span style="color: #333">=</span> ui<span style="color: #333">.</span>input(label<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;Title&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;keydown.enter&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>keydown_enter)
+        <span style="color: #080; font-weight: bold">for</span> book <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">reversed</span>(books):
+            author <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">await</span> book<span style="color: #333">.</span>author
+            <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>card(), ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;items-center&quot;</span>):
+                ui<span style="color: #333">.</span>label(author<span style="color: #333">.</span>name)
+                ui<span style="color: #333">.</span>input(<span style="background-color: #FFF0F0">&quot;Title&quot;</span>, on_change<span style="color: #333">=</span>book<span style="color: #333">.</span>save)<span style="color: #333">.</span>bind_value(book, <span style="background-color: #FFF0F0">&quot;title&quot;</span>)<span style="color: #333">.</span>on(<span style="background-color: #FFF0F0">&quot;blur&quot;</span>, <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh)
+                ui<span style="color: #333">.</span>button(icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;delete&quot;</span>, on_click<span style="color: #333">=</span><span style="color: #080; font-weight: bold">lambda</span> a<span style="color: #333">=</span>book: <span style="color: #007020">self</span><span style="color: #333">.</span>delete(a))<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.BookList.check" class="doc doc-heading">
+            <code class=" language-python">check()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>入力チェック</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+    <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #007020">self</span><span style="color: #333">.</span>title<span style="color: #333">.</span>value:
+        ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Specify title&quot;</span>)
+        <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+    <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> <span style="color: #080; font-weight: bold">await</span> models<span style="color: #333">.</span>Author<span style="color: #333">.</span>exists(<span style="color: #007020">id</span><span style="color: #333">=</span><span style="color: #007020">self</span><span style="color: #333">.</span>author_id<span style="color: #333">.</span>value):
+        ui<span style="color: #333">.</span>notify(<span style="background-color: #FFF0F0">&quot;Select author&quot;</span>)
+        <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">False</span>
+    <span style="color: #080; font-weight: bold">return</span> <span style="color: #080; font-weight: bold">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.nicegui_book_list.ListBase" class="doc doc-heading">
+            <code>ListBase</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="abc.ABC">ABC</span></code>, <code><span title="nicegui.ui.element">element</span></code></p>
+
+
+        <p>著者リストと書籍リストのGUIの基底クラス</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.label">label</span></code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>uiの見出し</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.refs">refs</span></code></td>
+            <td>
+                  <code>set[<a class="autorefs autorefs-internal" title="src.nicegui_book_list.ui.ListBase" href="#src.nicegui_book_list.ListBase">ListBase</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>一緒にrefreshするもの</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.fields">fields</span></code></td>
+            <td>
+                  <code>set[str]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>フィールドの集合</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.list_ui">list_ui</span></code></td>
+            <td>
+                  <code><span title="nicegui.ui.column">column</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>build時の一覧用のコンテナ</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.add_ui">add_ui</span></code></td>
+            <td>
+                  <code><span title="nicegui.ui.row">row</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>build時の追加入力用のコンテナ</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="src.nicegui_book_list.ListBase.model">model</span></code></td>
+            <td>
+                  <code><span title="tortoise.models.Model">Model</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>対象モデル</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+                <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #B06; font-weight: bold">ListBase</span>(ABC, ui<span style="color: #333">.</span>element):
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;著者リストと書籍リストのGUIの基底クラス</span>
+
+<span style="color: #D42">    :ivar label: uiの見出し</span>
+<span style="color: #D42">    :ivar refs: 一緒にrefreshするもの</span>
+<span style="color: #D42">    :ivar fields: フィールドの集合</span>
+<span style="color: #D42">    :ivar list_ui: build時の一覧用のコンテナ</span>
+<span style="color: #D42">    :ivar add_ui: build時の追加入力用のコンテナ</span>
+<span style="color: #D42">    :cvar model: 対象モデル</span>
+<span style="color: #D42">    &quot;&quot;&quot;</span>
+
+    label: <span style="color: #007020">str</span>
+    refs: <span style="color: #007020">set</span>[<span style="background-color: #FFF0F0">&quot;ListBase&quot;</span>]
+    fields: <span style="color: #007020">set</span>[<span style="color: #007020">str</span>]
+    list_ui: ui<span style="color: #333">.</span>column
+    add_ui: ui<span style="color: #333">.</span>row
+    model: ClassVar[Model]
+
+    <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, <span style="color: #333">*</span>, label: <span style="color: #007020">str</span>, refs: <span style="color: #007020">set</span>[<span style="background-color: #FFF0F0">&quot;ListBase&quot;</span>] <span style="color: #333">|</span> <span style="color: #080; font-weight: bold">None</span> <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">None</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;初期化&quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333">.</span>label <span style="color: #333">=</span> label
+        <span style="color: #007020">self</span><span style="color: #333">.</span>refs <span style="color: #333">=</span> refs <span style="color: #000; font-weight: bold">or</span> <span style="color: #007020">set</span>()
+        <span style="color: #007020">self</span><span style="color: #333">.</span>fields: <span style="color: #007020">set</span>[<span style="color: #007020">str</span>] <span style="color: #333">=</span> <span style="color: #007020">self</span><span style="color: #333">.</span>model<span style="color: #333">.</span>all()<span style="color: #333">.</span>fields <span style="color: #333">-</span> {<span style="background-color: #FFF0F0">&quot;id&quot;</span>}
+
+    <span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+    <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui <span style="color: #333">=</span> ui<span style="color: #333">.</span>column()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;mx-auto&quot;</span>)
+        <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+            ui<span style="color: #333">.</span>label(<span style="color: #007020">self</span><span style="color: #333">.</span>label)<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;text-2xl&quot;</span>)
+            <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;w-full items-center px-4&quot;</span>):
+                <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui <span style="color: #333">=</span> ui<span style="color: #333">.</span>row()
+                ui<span style="color: #333">.</span>button(on_click<span style="color: #333">=</span><span style="color: #007020">self</span><span style="color: #333">.</span>create, icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;add&quot;</span>)<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;ml-auto&quot;</span>)
+
+    <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">refresh</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;最新化&quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh()
+        <span style="color: #080; font-weight: bold">for</span> ref <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333">.</span>refs:
+            ref<span style="color: #333">.</span>build<span style="color: #333">.</span>refresh()
+
+    <span style="color: #555; font-weight: bold">@abstractmethod</span>
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">create</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;追加&quot;&quot;&quot;</span>
+        <span style="color: #080; font-weight: bold">if</span> <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>check():
+            <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>model<span style="color: #333">.</span>create(<span style="color: #333">**</span>{field: <span style="color: #007020">getattr</span>(<span style="color: #007020">self</span>, field)<span style="color: #333">.</span>value <span style="color: #080; font-weight: bold">for</span> field <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333">.</span>fields})
+            <span style="color: #007020">self</span><span style="color: #333">.</span>refresh()
+
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">keydown_enter</span>(<span style="color: #007020">self</span>, event: events<span style="color: #333">.</span>GenericEventArguments) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;Enterキー押下&quot;&quot;&quot;</span>
+        <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> event<span style="color: #333">.</span>args<span style="color: #333">.</span>get(<span style="background-color: #FFF0F0">&quot;isComposing&quot;</span>):  <span style="color: #888"># IME変換でないとき</span>
+            <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>create()
+
+    <span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">delete</span>(<span style="color: #007020">self</span>, record: Model) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">        </span><span style="color: #D42">&quot;&quot;&quot;削除&quot;&quot;&quot;</span>
+        <span style="color: #080; font-weight: bold">await</span> record<span style="color: #333">.</span>delete()
+        <span style="color: #007020">self</span><span style="color: #333">.</span>refresh()
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.__init__" class="doc doc-heading">
+            <code class=" language-python"><span style="color: #06B; font-weight: bold">__init__</span>(<span style="color: #333">*</span>, label, refs<span style="color: #333">=</span><span style="color: #080; font-weight: bold">None</span>)</code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>初期化</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, <span style="color: #333">*</span>, label: <span style="color: #007020">str</span>, refs: <span style="color: #007020">set</span>[<span style="background-color: #FFF0F0">&quot;ListBase&quot;</span>] <span style="color: #333">|</span> <span style="color: #080; font-weight: bold">None</span> <span style="color: #333">=</span> <span style="color: #080; font-weight: bold">None</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;初期化&quot;&quot;&quot;</span>
+    <span style="color: #007020">self</span><span style="color: #333">.</span>label <span style="color: #333">=</span> label
+    <span style="color: #007020">self</span><span style="color: #333">.</span>refs <span style="color: #333">=</span> refs <span style="color: #000; font-weight: bold">or</span> <span style="color: #007020">set</span>()
+    <span style="color: #007020">self</span><span style="color: #333">.</span>fields: <span style="color: #007020">set</span>[<span style="color: #007020">str</span>] <span style="color: #333">=</span> <span style="color: #007020">self</span><span style="color: #333">.</span>model<span style="color: #333">.</span>all()<span style="color: #333">.</span>fields <span style="color: #333">-</span> {<span style="background-color: #FFF0F0">&quot;id&quot;</span>}
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.build" class="doc doc-heading">
+            <code class=" language-python">build()</code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>GUI作成</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #555; font-weight: bold">@ui</span><span style="color: #333">.</span>refreshable
+<span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">build</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;GUI作成&quot;&quot;&quot;</span>
+    <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui <span style="color: #333">=</span> ui<span style="color: #333">.</span>column()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;mx-auto&quot;</span>)
+    <span style="color: #080; font-weight: bold">with</span> <span style="color: #007020">self</span><span style="color: #333">.</span>list_ui:
+        ui<span style="color: #333">.</span>label(<span style="color: #007020">self</span><span style="color: #333">.</span>label)<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;text-2xl&quot;</span>)
+        <span style="color: #080; font-weight: bold">with</span> ui<span style="color: #333">.</span>row()<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;w-full items-center px-4&quot;</span>):
+            <span style="color: #007020">self</span><span style="color: #333">.</span>add_ui <span style="color: #333">=</span> ui<span style="color: #333">.</span>row()
+            ui<span style="color: #333">.</span>button(on_click<span style="color: #333">=</span><span style="color: #007020">self</span><span style="color: #333">.</span>create, icon<span style="color: #333">=</span><span style="background-color: #FFF0F0">&quot;add&quot;</span>)<span style="color: #333">.</span>props(<span style="background-color: #FFF0F0">&quot;flat&quot;</span>)<span style="color: #333">.</span>classes(<span style="background-color: #FFF0F0">&quot;ml-auto&quot;</span>)
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.check" class="doc doc-heading">
+            <code class=" language-python">check()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>入力チェック</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #555; font-weight: bold">@abstractmethod</span>
+<span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">check</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #007020">bool</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;入力チェック&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.create" class="doc doc-heading">
+            <code class=" language-python">create()</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>追加</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">create</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;追加&quot;&quot;&quot;</span>
+    <span style="color: #080; font-weight: bold">if</span> <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>check():
+        <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>model<span style="color: #333">.</span>create(<span style="color: #333">**</span>{field: <span style="color: #007020">getattr</span>(<span style="color: #007020">self</span>, field)<span style="color: #333">.</span>value <span style="color: #080; font-weight: bold">for</span> field <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333">.</span>fields})
+        <span style="color: #007020">self</span><span style="color: #333">.</span>refresh()
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.delete" class="doc doc-heading">
+            <code class=" language-python">delete(record)</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>削除</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">delete</span>(<span style="color: #007020">self</span>, record: Model) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;削除&quot;&quot;&quot;</span>
+    <span style="color: #080; font-weight: bold">await</span> record<span style="color: #333">.</span>delete()
+    <span style="color: #007020">self</span><span style="color: #333">.</span>refresh()
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.keydown_enter" class="doc doc-heading">
+            <code class=" language-python">keydown_enter(event)</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Enterキー押下</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">async</span> <span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">keydown_enter</span>(<span style="color: #007020">self</span>, event: events<span style="color: #333">.</span>GenericEventArguments) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;Enterキー押下&quot;&quot;&quot;</span>
+    <span style="color: #080; font-weight: bold">if</span> <span style="color: #000; font-weight: bold">not</span> event<span style="color: #333">.</span>args<span style="color: #333">.</span>get(<span style="background-color: #FFF0F0">&quot;isComposing&quot;</span>):  <span style="color: #888"># IME変換でないとき</span>
+        <span style="color: #080; font-weight: bold">await</span> <span style="color: #007020">self</span><span style="color: #333">.</span>create()
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="src.nicegui_book_list.ListBase.refresh" class="doc doc-heading">
+            <code class=" language-python">refresh()</code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>最新化</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/nicegui_book_list/ui.py</code></summary>
+              <div class="codehilite" style="background: #ffffff"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #080; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #06B; font-weight: bold">refresh</span>(<span style="color: #007020">self</span>) <span style="color: #333">-&gt;</span> <span style="color: #080; font-weight: bold">None</span>:
+<span style="color: #BBB">    </span><span style="color: #D42">&quot;&quot;&quot;最新化&quot;&quot;&quot;</span>
+    <span style="color: #007020">self</span><span style="color: #333">.</span>build<span style="color: #333">.</span>refresh()
+    <span style="color: #080; font-weight: bold">for</span> ref <span style="color: #000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333">.</span>refs:
+        ref<span style="color: #333">.</span>build<span style="color: #333">.</span>refresh()
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
