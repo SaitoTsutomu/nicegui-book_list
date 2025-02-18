@@ -29,8 +29,8 @@ async def index() -> None:
     await book_list.build()
 
 
-def main(*, reload: bool = False, port: int = 8106) -> None:
+def run(*, port: int | None = None) -> None:
     """アプリケーション実行"""
     app.on_startup(init_db)
     app.on_shutdown(close_db)
-    ui.run(title="Book List", reload=reload, port=port)
+    ui.run(title="Book List", reload=False, port=port)

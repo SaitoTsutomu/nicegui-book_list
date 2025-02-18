@@ -10,6 +10,7 @@ classifiers = [
   "Topic :: Scientific/Engineering",
 ]
 dependencies = [
+  "fire>=0.7.0",
   "nicegui>=2.11.1",
   "pytest>=8.3.4",
   "tortoise-orm>=0.24.0",
@@ -18,7 +19,7 @@ description = "Book list sample application on tortoise database"
 name = "nicegui-book-list"
 readme = "README.md"
 requires-python = ">=3.12"
-version = "0.1.0"
+version = "0.1.1"
 
 [project.urls]
 docs = "https://saitotsutomu.github.io/nicegui-book_list/"
