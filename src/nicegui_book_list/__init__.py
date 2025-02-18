@@ -4,7 +4,7 @@ from importlib.metadata import metadata
 
 import fire
 
-from .main import run
+from .main import run_app
 from .models import Author, Book
 from .ui import AuthorList, BookList, ListBase
 
@@ -20,10 +20,10 @@ __all__ = [
     "ListBase",
     "__author__",
     "__version__",
-    "run",
+    "run_app",
 ]
 
 
 def main() -> None:
     """スクリプト実行"""
-    fire.Fire(run)
+    fire.Fire(run_app)

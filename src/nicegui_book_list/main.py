@@ -29,7 +29,7 @@ async def index() -> None:
     await book_list.build()
 
 
-def run(*, port: int | None = None) -> None:
+def run_app(*, port: int | None = None) -> None:
     """アプリケーション実行"""
     app.on_startup(init_db)
     app.on_shutdown(close_db)
